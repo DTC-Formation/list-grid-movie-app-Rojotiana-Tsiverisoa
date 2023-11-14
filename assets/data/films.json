@@ -1,0 +1,120 @@
+{
+    "items": [
+        {
+            "categories": "Actions",
+            "posts": [
+                {
+                    "id": 1,
+                    "title": "The Creator (2023)",
+                    "image": "assets/images/actions/img_1.jpg",
+                    "descri": "Dans un futur proche, les humains et l'intelligence artificielle (IA) se livrent une guerre sans merci. Joshua, un ex-agent des forces spéciales fragilisé par la disparition de sa femme, est recruté pour traquer et neutraliser le Créateur, l'insaisissable architecte d'une IA avancée à l'origine d'une arme qui pourrait mettre fin à la guerre... et détruire l'humanité tout entière. Avec l'aide d'une unité d'agents d'élite, Joshua traverse les lignes ennemies et pénètre au coeur de leur dangereux territoire. Il découvrira bientôt que l'arme funeste qu'il est chargé de détruire n'est autre qu'une intelligence artificelle supérieure qui a pris les traits d'un jeune enfant..."
+                },
+                {
+                    "id": 2,
+                    "title": "Darkland Undercover (2023)",
+                    "image": "assets/images/actions/img_2.jpg",
+                    "descri": "Zaid purge une peine de prison depuis sept ans. Il accepte de se mettre au service de la police en échange de sa libération. Il va devoir intégrer un gang ultraviolent tout en essayant de renouer avec son fils dont il a été séparé."
+                },
+                {
+                    "id": 3,
+                    "title": "Becky 2: The Wrath of Becky (2023)",
+                    "image": "assets/images/actions/img_3.jpg",
+                    "descri": "Deux ans après avoir échappé à une violente attaque contre sa famille, Becky, 16 ans, tente de reconstruire sa vie sous la garde d'une femme plus âgée, une âme sœur nommée Elena. Cependant, lorsqu'un groupe violent connu sous le nom de Noble Men fait irruption dans leur maison, les attaque et prend leur chien bien-aimé, Becky doit revenir à ses anciennes habitudes pour se protéger et protéger ses proches."
+                },
+                {
+                    "id": 4,
+                    "title": "The Marvels (2023)",
+                    "image": "assets/images/actions/img_4.jpg",
+                    "descri": "Lorsque Carol Danvers, alias Captain Marvel, se retrouve dans un étrange vortex lié à une révolution kree, ses pouvoirs se mêlent à ceux de Kamala Khan, alias Miss Marvel, et à ceux de sa nièce, le capitaine Monica Rambeau, désormais astronaute du S.A.B.E.R. Ce trio improbable va devoir travailler ensemble pour sauver l'univers."
+                }
+            ]
+        },
+        {
+            "categories": "Aventures",
+            "posts": [
+                {
+                    "id": 1,
+                    "title": "Le Trésor perdu de Tom Sawyer (2023)",
+                    "image": "assets/images/adventures/img_1.jpg",
+                    "descri": "Il fut un temps où Agatha Armstrong et Madame Mac, sa fidèle amie, étaient des aventurières intrépides. Cependant, à la naissance de son fils Ant, Agatha est devenue une mère craintive et surprotectrice. Un jour, Ant, désormais adolescent, et ses amis découvrent une lettre dont le contenu éveille leur intérêt. Ils se mettent alors en quête de l'or qui appartenait à Tom Sawyer."
+                },
+                {
+                    "id": 2,
+                    "title": "A Fairy Tale After All (2022)",
+                    "image": "assets/images/adventures/img_2.jpg",
+                    "descri": "Une adolescente têtue se retrouve confrontée à des personnages fantaisistes lorsqu'elle est transportée dans un monde de fantaisie et de contes de fées alors qu'elle assiste à un spectacle de marionnettes à l'école."
+                },
+                {
+                    "id": 3,
+                    "title": "Expendables 4 (2023)",
+                    "image": "assets/images/adventures/img_3.jpg",
+                    "descri": "Armés de toutes les armes dont ils peuvent disposer, les Expendables sont la dernière ligne de défense du monde et l'équipe que l'on appelle lorsque toutes les autres options ne sont plus possibles. Le mercenaire Barney Ross et son équipe affrontent un marchand d'armes et son armée privée."
+                },
+                {
+                    "id": 4,
+                    "title": "Mission : Impossible - Dead Reckoning Partie 1 (2023)",
+                    "image": "assets/images/adventures/img_4.jpg",
+                    "descri": "Ethan Hunt et son équipe de l'IMF se lancent dans leur mission la plus périlleuse à ce jour : traquer une effroyable nouvelle arme avant que celle-ci ne tombe entre de mauvaises mains et menace l'humanité entière. Le contrôle du futur et le destin du monde sont en jeu. Alors que les forces obscures de son passé ressurgissent, Ethan s'engage dans une course mortelle autour du globe. Confronté à un puissant et énigmatique ennemi, Ethan réalise que rien ne peut se placer au-dessus de sa mission - pas même la vie de ceux qu'il aime."
+                }
+            ]
+        },
+        {
+            "categories": "Arts Martiaux",
+            "posts": [
+                {
+                    "id": 1,
+                    "title": "The Paper Tigers (2021)",
+                    "image": "assets/images/arts/img_1.jpg",
+                    "descri": "Ados, les copains Danny, Hing et Jim étaient inséparables. Loyaux disciples de leur Sifu, Maître Cheung, ils s'entraînaient et se battaient ensemble, aspirant à devenir les plus grands experts en arts martiaux. La vie et les plans changent, et lorsque Dany se rend seul au Japon pour participer à une compétition, les trois comparses se perdent de vue. Trente ans plus tard, c'est le drame qui les réunit de nouveau, Sifu ayant été tué. Les trois amis, maintenant presque des étrangers, s'unissent pour s'acquitter de leur promesse faite à Sifu et capturer son assassin. Ils sont plus âgés, pas nécessairement plus sages, loin d'être dans la même condition physique qu'autrefois, mais ils vont réaliser qu'il leur reste beaucoup de choses à apprendre au point de vue des arts martiaux - et de l'amitié"
+                },
+                {
+                    "id": 2,
+                    "title": "Mortal Kombat (2021)",
+                    "image": "assets/images/arts/img_2.jpg",
+                    "descri": "Lorsque les plus grands champions de la Terre sont appelés à combattre les ennemis de l'Autre Monde, ils doivent découvrir leurs véritables pouvoirs pour sauver notre planète de l'annihilation totale. Mortal Kombat est une nouvelle aventure cinématographique basée sur la franchise de jeu vidéo iconique."
+                },
+                {
+                    "id": 3,
+                    "title": "Ip Man 5 : Kung Fu Master - Les Origines (2021)",
+                    "image": "assets/images/arts/img_3.jpg",
+                    "descri": "Plusieurs années avant de devenir le fameux maître de Bruce Lee, le jeune Ip Man, alors capitaine de police, est accusé à tort du meurtre d'un mafieux et ciblé par les deux filles de ce dernier, assoiffées de vengeance. Forcé de quitter les forces de l'ordre, Ip Man doit aussi faire face à l'arrivée de l'armée japonaise à Guangzhou."
+                },
+                {
+                    "id": 4,
+                    "title": "Jiu Jitsu (2020)",
+                    "image": "assets/images/arts/img_4.jpg",
+                    "descri": "Un ancien ordre de combattants experts du Jiu Jitsu doit faire face à un extraterrestre vicieux afin de protéger la Terre. L'avenir de l'humanité repose sur eux..."
+                }
+            ]
+        },
+        {
+            "categories": "Horreurs",
+            "posts": [
+                {
+                    "id": 1,
+                    "title": "Monster Inside: America's Most Extreme Haunted House (2023)",
+                    "image": "assets/images/horrors/img_1.jpg",
+                    "descri": "Russ McKamey est le créateur de la « maison hantée la plus extrême » au monde : McKamey Manor. Il est également un agresseur manipulateur, selon trois personnes qui réalisent que l'horreur n'est jamais terminée une fois que l'on décide d'entrer dans le Manoir."
+                },
+                {
+                    "id": 2,
+                    "title": "L'Exorciste du Vatican (2023)",
+                    "image": "assets/images/horrors/img_2.jpg",
+                    "descri": "Inspiré des véritables archives du Père Gabriele Amorth, exorciste en chef du Vatican. Le Père Gabriele Amorth enquête suite à la découverte terrifiante d'un jeune garçon possédé. Ses investigations le mèneront à dévoiler une conspiration séculaire que le Vatican a désespérément tenté de maintenir dans l'oubli."
+                },
+                {
+                    "id": 3,
+                    "title": "Les Ordres du Mal (2023)",
+                    "image": "assets/images/horrors/img_3.jpg",
+                    "descri": "Dans l'Espagne de l'après-guerre civile, Narcisa, une novice, arrive dans un ancien couvent, transformé en école de filles, pour devenir institutrice."
+                },
+                {
+                    "id": 4,
+                    "title": "The Blazing World (2021)",
+                    "image": "assets/images/horrors/img_4.jpg",
+                    "descri": "Depuis l'âge de six ans, Margaret est hantée par le souvenir d'avoir vu sa sœur se noyer lors d'une bagarre explosive entre ses parents. En tant que jeune femme, elle s’enfonce davantage dans sa vie intérieure tordue, se retrouvant finalement au bord du suicide. À travers un voyage épique dans les couloirs les plus enfumés et les plus effrayants de son imagination, elle tente d'exorciser les démons qui la poussent de plus en plus près du bord."
+                }
+            ]
+        }
+    ]
+}
