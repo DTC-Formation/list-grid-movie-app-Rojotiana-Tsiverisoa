@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
 
 import 'package:movie_app/colors/my_colors.dart';
 
@@ -10,6 +12,132 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Map<String, dynamic>> _items = [];
+
+  // Fetch content from the json file
+  Future<void> readJson() async {
+    final String response =
+        await rootBundle.loadString('assets/data/films.json');
+    final data = await json.decode(response);
+
+    setState(() {
+      _items = List<Map<String, dynamic>>.from(data["items"]);
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    readJson();
+  }
+
+  Widget buildCategorySection(Map<String, dynamic> category) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Category Title
+        Text(
+          category["categories"],
+          style: const TextStyle(
+            fontWeight: FontWeight.w600,
+            color: MyColors.c1,
+            fontSize: 20,
+          ),
+        ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: 190,
+          child: GridView(
+            scrollDirection: Axis.horizontal,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 1,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+            ),
+            children: [
+              ...category["posts"].take(5).map((post) {
+                bool isLongTitle = post["title"].length >= 20;
+
+                return TextButton(
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.all(0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  onPressed: () => {},
+                  child: SizedBox(
+                    child: Stack(
+                      children: [
+                        ClipRRect(
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(20),
+                          ),
+                          child: Image.asset(
+                            post["image"],
+                            fit: BoxFit.cover,
+                            width: MediaQuery.of(context).size.width,
+                            height: MediaQuery.of(context).size.height,
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          child: Container(
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: Colors.black.withOpacity(0.8),
+                              borderRadius: const BorderRadius.only(
+                                bottomLeft: Radius.circular(20),
+                                bottomRight: Radius.circular(20),
+                              ),
+                            ),
+                            child: Text(
+                              isLongTitle
+                                  ? '${post["title"].substring(0, 20)}...'
+                                  : post["title"],
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }).toList(),
+              TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: MyColors.c1,
+                  padding: const EdgeInsets.all(0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                onPressed: () => {},
+                child: const SizedBox(
+                  child: Text(
+                    'Voir Plus',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.only(bottom: 15),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -38,883 +166,10 @@ class _HomePageState extends State<HomePage> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8),
-                child: SizedBox(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      //  ----------- Actions -----------
-                      const Text(
-                        'Actions',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          color: MyColors.c1,
-                          fontSize: 20,
-                        ),
-                      ),
-                      SizedBox(
-                        width: size.width,
-                        height: 190,
-                        child: GridView(
-                          scrollDirection: Axis.horizontal,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 1,
-                            mainAxisSpacing: 10,
-                            crossAxisSpacing: 10,
-                          ),
-                          children: [
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/actions/img_1.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'The Creator (2023)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/actions/img_2.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'Darkland Undercover (2023)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/actions/img_3.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'Becky 2 : The Wrath of Becky (2023)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                backgroundColor: MyColors.c1,
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: const SizedBox(
-                                child: Text(
-                                  'Voir Plus',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      const Padding(
-                        padding: EdgeInsets.only(
-                          bottom: 15,
-                        ),
-                      ),
-
-                      //  ----------- Aventures -----------
-                      const Text(
-                        'Aventures',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          color: MyColors.c1,
-                          fontSize: 20,
-                        ),
-                      ),
-                      SizedBox(
-                        width: size.width,
-                        height: 190,
-                        child: GridView(
-                          scrollDirection: Axis.horizontal,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 1,
-                            mainAxisSpacing: 10,
-                            crossAxisSpacing: 10,
-                          ),
-                          children: [
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/adventures/img_1.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'Le Trésor perdu de Tom Sawyer (2023)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/adventures/img_2.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'A Fairy Tale After All (2022)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/adventures/img_3.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'Expendables 4 (2023)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/adventures/img_4.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'Mission : Impossible - Dead Reckoning Partie 1 (2023)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                backgroundColor: MyColors.c1,
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: const SizedBox(
-                                child: Text(
-                                  'Voir Plus',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      const Padding(
-                        padding: EdgeInsets.only(
-                          bottom: 15,
-                        ),
-                      ),
-
-                      //  ----------- Arts Martiaux -----------
-                      const Text(
-                        'Arts Martiaux',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          color: MyColors.c1,
-                          fontSize: 20,
-                        ),
-                      ),
-                      SizedBox(
-                        width: size.width,
-                        height: 190,
-                        child: GridView(
-                          scrollDirection: Axis.horizontal,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 1,
-                            mainAxisSpacing: 10,
-                            crossAxisSpacing: 10,
-                          ),
-                          children: [
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/arts/img_1.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'The Paper Tigers (2021)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/arts/img_2.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'Mortal Kombat (2021)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/arts/img_3.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'Ip Man 5 : Kung Fu Master - Les Origines (2021)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                backgroundColor: MyColors.c1,
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: const SizedBox(
-                                child: Text(
-                                  'Voir Plus',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      const Padding(
-                        padding: EdgeInsets.only(
-                          bottom: 15,
-                        ),
-                      ),
-
-                      //  ----------- Horreurs -----------
-                      const Text(
-                        'Horreurs',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          color: MyColors.c1,
-                          fontSize: 20,
-                        ),
-                      ),
-                      SizedBox(
-                        width: size.width,
-                        height: 190,
-                        child: GridView(
-                          scrollDirection: Axis.horizontal,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 1,
-                            mainAxisSpacing: 10,
-                            crossAxisSpacing: 10,
-                          ),
-                          children: [
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/horrors/img_1.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'Monster Inside: America\'s Most Extreme Haunted House (2023)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/horrors/img_2.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'L\'Exorciste du Vatican (2023)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/horrors/img_3.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'Les Ordres du Mal (2023)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/horrors/img_4.jpg',
-                                        fit: BoxFit.cover,
-                                        width: size.width,
-                                        height: size.height,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.5),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20),
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          'The Blazing World (2021)',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                backgroundColor: MyColors.c1,
-                                padding: const EdgeInsets.all(0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () => {},
-                              child: const SizedBox(
-                                child: Text(
-                                  'Voir Plus',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      const Padding(
-                        padding: EdgeInsets.only(
-                          bottom: 15,
-                        ),
-                      ),
-                    ],
-                  ),
+                child: Column(
+                  children: _items.map((category) {
+                    return buildCategorySection(category);
+                  }).toList(),
                 ),
               ),
             ],
