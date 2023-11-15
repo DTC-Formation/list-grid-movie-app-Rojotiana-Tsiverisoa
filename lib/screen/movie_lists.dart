@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:movie_app/colors/my_colors.dart';
+import 'package:movie_app/screen/movie_details.dart';
 
 class MoviesList extends StatefulWidget {
   final String category;
@@ -83,14 +84,33 @@ class _MoviesListState extends State<MoviesList> {
                               left: 4,
                               right: 4,
                             ),
-                            child: ClipRRect(
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(15),
+                            child: TextButton(
+                              style: TextButton.styleFrom(
+                                padding: const EdgeInsets.all(0),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
                               ),
-                              child: Image.asset(
-                                widget.movies[index]["image"],
-                                fit: BoxFit.cover,
-                                height: 120,
+                              onPressed: () => {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MoviesDetails(
+                                      category: widget.category,
+                                      movieDetails: widget.movies[index],
+                                    ),
+                                  ),
+                                )
+                              },
+                              child: ClipRRect(
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                                child: Image.asset(
+                                  widget.movies[index]["image"],
+                                  fit: BoxFit.cover,
+                                  height: 120,
+                                ),
                               ),
                             ),
                           );
@@ -138,7 +158,17 @@ class _MoviesListState extends State<MoviesList> {
                                 borderRadius: BorderRadius.circular(0),
                               ),
                             ),
-                            onPressed: () => {},
+                            onPressed: () => {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MoviesDetails(
+                                    category: widget.category,
+                                    movieDetails: widget.movies[index],
+                                  ),
+                                ),
+                              )
+                            },
                             child: Container(
                               width: size.width,
                               color: MyColors.c2,

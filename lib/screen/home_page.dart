@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 import 'package:movie_app/colors/my_colors.dart';
+import 'package:movie_app/screen/movie_details.dart';
 import 'package:movie_app/screen/movie_lists.dart';
 
 class HomePage extends StatefulWidget {
@@ -66,7 +67,17 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  onPressed: () => {},
+                  onPressed: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MoviesDetails(
+                          category: category["categories"],
+                          movieDetails: post,
+                        ),
+                      ),
+                    )
+                  },
                   child: SizedBox(
                     child: Stack(
                       children: [
