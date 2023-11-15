@@ -66,18 +66,6 @@ class _MoviesDetailsState extends State<MoviesDetails> {
                   ),
                 ],
               ),
-              // const SizedBox(height: 16),
-              // const Text(
-              //   'Description:',
-              //   style: TextStyle(
-              //     fontWeight: FontWeight.bold,
-              //     fontSize: 18,
-              //   ),
-              // ),
-              // Text(
-              //   widget.movieDetails["descri"],
-              //   style: const TextStyle(fontSize: 16),
-              // ),
               Padding(
                 padding: const EdgeInsets.all(8),
                 child: Column(
@@ -98,6 +86,9 @@ class _MoviesDetailsState extends State<MoviesDetails> {
                     ),
                     RichText(
                       text: TextSpan(
+                        style: const TextStyle(
+                          color: Colors.black,
+                        ),
                         text: 'Catégorie ',
                         children: [
                           const TextSpan(
@@ -110,34 +101,20 @@ class _MoviesDetailsState extends State<MoviesDetails> {
                         ],
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(
+                    Padding(
+                      padding: const EdgeInsets.only(
                         top: 5,
                         bottom: 5,
                       ),
                       child: Row(
-                        children: [
-                          Icon(
+                        children: List.generate(
+                          widget.movieDetails["stars"],
+                          (index) => const Icon(
                             Icons.star,
                             size: 25,
                             color: Colors.black,
                           ),
-                          Icon(
-                            Icons.star,
-                            size: 25,
-                            color: Colors.black,
-                          ),
-                          Icon(
-                            Icons.star,
-                            size: 25,
-                            color: Colors.black,
-                          ),
-                          Icon(
-                            Icons.star,
-                            size: 25,
-                            color: Colors.black,
-                          ),
-                        ],
+                        ),
                       ),
                     ),
                     Text(
