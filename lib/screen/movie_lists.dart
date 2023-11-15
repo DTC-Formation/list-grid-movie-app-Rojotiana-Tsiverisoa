@@ -54,56 +54,56 @@ class _MoviesListState extends State<MoviesList> {
                 ),
               ),
               Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-              const Padding(
-                padding: EdgeInsets.all(8),
-                child: Text(
-                  'Nos recommandations',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    color: MyColors.c1,
-                    fontSize: 20,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(8),
+                    child: Text(
+                      'Nos recommandations',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: MyColors.c1,
+                        fontSize: 20,
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 4,
-                  right: 4,
-                ),
-                child: SizedBox(
-                  height: 120,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 4,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.only(
-                          left: 4,
-                          right: 4,
-                        ),
-                        child: ClipRRect(
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(15),
-                          ),
-                          child: Image.asset(
-                            widget.movies[index]["image"],
-                            fit: BoxFit.cover,
-                            height: 120,
-                          ),
-                        ),
-                      );
-                    },
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 4,
+                      right: 4,
+                    ),
+                    child: SizedBox(
+                      height: 120,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 4,
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.only(
+                              left: 4,
+                              right: 4,
+                            ),
+                            child: ClipRRect(
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(15),
+                              ),
+                              child: Image.asset(
+                                widget.movies[index]["image"],
+                                fit: BoxFit.cover,
+                                height: 120,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(
-                  bottom: 5,
-                ),
-              ),
-              ],
+                  const Padding(
+                    padding: EdgeInsets.only(
+                      bottom: 5,
+                    ),
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.all(8),
