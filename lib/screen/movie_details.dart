@@ -46,6 +46,7 @@ class _MoviesDetailsState extends State<MoviesDetails> {
                         image: AssetImage(
                           widget.movieDetails["image"],
                         ),
+                        alignment: Alignment.topCenter,
                         colorFilter: const ColorFilter.mode(
                           Color.fromARGB(122, 0, 0, 0),
                           BlendMode.darken,
