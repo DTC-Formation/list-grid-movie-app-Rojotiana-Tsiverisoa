@@ -30,6 +30,48 @@
                     "image": "assets/images/actions/img_4.jpg",
                     "descri": "Lorsque Carol Danvers, alias Captain Marvel, se retrouve dans un étrange vortex lié à une révolution kree, ses pouvoirs se mêlent à ceux de Kamala Khan, alias Miss Marvel, et à ceux de sa nièce, le capitaine Monica Rambeau, désormais astronaute du S.A.B.E.R. Ce trio improbable va devoir travailler ensemble pour sauver l'univers.",
                     "stars": 3
+                },
+                {
+                    "id": 5,
+                    "title": "Supercell (2023)",
+                    "image": "assets/images/actions/img_5.jpg",
+                    "descri": "William, un adolescent au grand cœur, a toujours vécu dans l'espoir de suivre les traces de son père, le légendaire chasseur de tempêtes Bill Brody, tué par une super tornade. L'héritage de son père a maintenant été transformé en une entreprise touristique gérée par l'infâme Zane Rogers, qui utilise maintenant William comme principale attraction pour mener un groupe d'aventuriers au cœur d'une des tempêtes les plus dangereuses du monde.",
+                    "stars": 4
+                },
+                {
+                    "id": 6,
+                    "title": "Farang (2023)",
+                    "image": "assets/images/actions/img_6.jpg",
+                    "descri": "Sam est un détenu exemplaire. A quelques mois de sa sortie de prison, il prépare assidument sa réinsertion. Lors d'une permission, son passé le rattrape et un accident ne lui laisse qu'un seul choix : la fuite. Cinq ans plus tard, il a refait sa vie en Thaïlande, où il a fondé la famille dont il a toujours rêvé. Mais Narong, le parrain local, l'oblige à plonger à nouveau dans la délinquance. Quand Sam veut tout arrêter, Narong s'attaque à sa famille… Sam va traverser la Thaïlande pour se venger de son bourreau.",
+                    "stars": 4
+                },
+                {
+                    "id": 7,
+                    "title": "Out of Exile (2023)",
+                    "image": "assets/images/actions/img_7.jpg",
+                    "descri": "Gabe Russell, un voleur récemment libéré sur parole, est de retour. Après avoir raté le vol d'un véhicule blindé, il se retrouve sous la pression du FBI et doit tenter une dernière fois de s'échapper et de créer une nouvelle vie pour lui et sa fille, dont il s'est éloigné.",
+                    "stars": 2
+                },
+                {
+                    "id": 8,
+                    "title": "Control Zeta (2023)",
+                    "image": "assets/images/actions/img_8.jpg",
+                    "descri": "Dans un futur proche, les crimes et les accidents ont disparu car il est devenu possible d'appeler le passé. Cependant, la paix sera perturbée par un tueur qui semble avoir trouvé la seule faille dans le système.",
+                    "stars": 2
+                },
+                {
+                    "id": 9,
+                    "title": "57 Seconds (2023)",
+                    "image": "assets/images/actions/img_9.jpg",
+                    "descri": "Lorsqu'un blogueur déjoue une attaque contre un expert en technologie, il se retrouve en possession d'une mystérieuse bague qui lui permet de voyager 57 secondes dans le passé.",
+                    "stars": 3
+                },
+                {
+                    "id": 10,
+                    "title": "Sayen: La Route asséchée (2023)",
+                    "image": "assets/images/actions/img_10.jpg",
+                    "descri": "Sayen doit se confronter à la rudesse du desert d'Atacama. Elle fait équipe, à contrecoeur, avec Quimal, qui doit rétablir la réputation de son père et sauver son village de la sécheresse en raison de l'exploitation abusive de l'eau par Acteon.",
+                    "stars": 5
                 }
             ]
         },
@@ -63,6 +105,48 @@
                     "image": "assets/images/adventures/img_4.jpg",
                     "descri": "Ethan Hunt et son équipe de l'IMF se lancent dans leur mission la plus périlleuse à ce jour : traquer une effroyable nouvelle arme avant que celle-ci ne tombe entre de mauvaises mains et menace l'humanité entière. Le contrôle du futur et le destin du monde sont en jeu. Alors que les forces obscures de son passé ressurgissent, Ethan s'engage dans une course mortelle autour du globe. Confronté à un puissant et énigmatique ennemi, Ethan réalise que rien ne peut se placer au-dessus de sa mission - pas même la vie de ceux qu'il aime.",
                     "stars": 4
+                },
+                {
+                    "id": 5,
+                    "title": "Gran Turismo (2023)",
+                    "image": "assets/images/adventures/img_5.jpg",
+                    "descri": "Gran Turismo est inspiré de l'incroyable histoire vécue d'une invraisemblable bande d'infortunés - un amateur de jeu vidéo de classe ouvrière, un ex-pilote d'autos de course paumé et un idéaliste de l'industrie du sport motorisé. Ensemble, ils risquent tout pour percer dans le sport le plus prestigieux au monde. Gran Turismo est une captivante histoire et un feu roulant d'action qui prouvent que tout est possible lorsqu'on conduit avec l'énergie du désespoir.",
+                    "stars": 4
+                },
+                {
+                    "id": 6,
+                    "title": "Blue Beetle (2023)",
+                    "image": "assets/images/adventures/img_6.jpg",
+                    "descri": "Fraîchement diplômé de l'université, Jaime Reyes rentre chez lui, plein d'ambitions, mais il découvre que la situation a bien changé depuis son départ. Tandis qu'il cherche sa place dans le monde, le destin s'en mêle : Jaime se retrouve par hasard en possession du Scarabée, une ancienne relique d'une biotechnologie extraterrestre. Dès lors que le Scarabée choisit de faire de Jaime son hôte, le jeune homme se voit revêtu d'une armure hors du commun qui lui octroie des pouvoirs extraordinaires - et imprévisibles. Tout bascule alors pour Jaime qui devient le super-héros Blue Beetle ...",
+                    "stars": 4
+                },
+                {
+                    "id": 7,
+                    "title": "Barbie (2023)",
+                    "image": "assets/images/adventures/img_7.jpg",
+                    "descri": "Parallèlement au monde réel, il existe Barbie Land, un monde parfait où les poupées Barbie vivent joyeusement, persuadées d'avoir rendu les filles humaines heureuses. Mais un jour, une Barbie commence à se poser des questions et à devenir humaine. Sur les conseils d'une Barbie étrange, elle part pour le monde réel afin de retrouver la fille à laquelle elle appartenait afin de pouvoir retrouver sa perfection. Dans sa quête, elle est accompagnée par un Ken fou amoureux d'elle qui va également trouver un sens à sa vie dans le monde réel ...",
+                    "stars": 2
+                },
+                {
+                    "id": 8,
+                    "title": "Alana, déesse de justice (2022)",
+                    "image": "assets/images/adventures/img_8.jpg",
+                    "descri": "Séparée de ses parents à la naissance suite à une éruption volcanique, puis ayant grandi dans une société très injuste, Alana tente de comprendre le mystère de ses crises de colère. Quand elle apprend qu'elle est la réincarnation de Sri Asih, la déesse de justice, elle va mettre ses super-pouvoirs au service du bien contre la corruption et le crime organisé.",
+                    "stars": 2
+                },
+                {
+                    "id": 9,
+                    "title": "Indiana Jones et le Cadran de la destinée (2023)",
+                    "image": "assets/images/adventures/img_9.jpg",
+                    "descri": "1969. Après avoir passé plus de dix ans à enseigner au Hunter College de New York, l'estimé docteur Jones, professeur d'archéologie, est sur le point de prendre sa retraite et de couler des jours paisibles. Tout bascule après la visite surprise de sa filleule Helena Shaw, qui est à la recherche d'un artefact rare que son père a confié à Indy des années auparavant : le fameux cadran d'Archimède, une relique qui aurait le pouvoir de localiser les fissures temporelles. En arnaqueuse accomplie, Helena vole l'objet et quitte précipitamment le pays afin de le vendre au plus offrant. Indy n'a d'autre choix que de se lancer à sa poursuite. Il ressort son fédora et son blouson de cuir pour une dernière virée ...",
+                    "stars": 3
+                },
+                {
+                    "id": 10,
+                    "title": "Jules au pays d'Asha (2023)",
+                    "image": "assets/images/adventures/img_10.jpg",
+                    "descri": "Par une froide journée d'hiver de 1940, Jules emménage avec sa famille chez son oncle, maire d'un village de colons dans le nord du Québec. À cause d'une maladie rare de la peau, il n'a aucun ami. Alors son plus grand souhait est de guérir. Lorsque son chien Flagrant se sauve dans la forêt, Jules n'a d'autre choix que de s'éloigner de sa maison pour le retrouver. En chemin, il fait la rencontre d'Asha, une mystérieuse jeune fille autochtone. Ensemble, ils vont s'aventurer de l'autre côté de la forêt, là où la nature se révèle pleine de vie et de secrets.",
+                    "stars": 5
                 }
             ]
         },
@@ -96,6 +180,48 @@
                     "image": "assets/images/arts/img_4.jpg",
                     "descri": "Un ancien ordre de combattants experts du Jiu Jitsu doit faire face à un extraterrestre vicieux afin de protéger la Terre. L'avenir de l'humanité repose sur eux...",
                     "stars": 2
+                },
+                {
+                    "id": 5,
+                    "title": "Triple Threat (2019)",
+                    "image": "assets/images/arts/img_5.jpg",
+                    "descri": "Un contrat est mis sur la tête de la fille d'un multi-millionnaire par un syndicat du crime. Une équipe de mercenaires va tenter de les arrêter.",
+                    "stars": 4
+                },
+                {
+                    "id": 6,
+                    "title": "Stronger Than the World (2016)",
+                    "image": "assets/images/arts/img_6.jpg",
+                    "descri": "Dans ce film biographique, José Aldo, élevé à la dure et né pour se battre, fait face à ses propres démons alors qu'il se hisse au rang de champion des arts martiaux.",
+                    "stars": 4
+                },
+                {
+                    "id": 7,
+                    "title": "Street Fighter: Assassin's Fist (2014)",
+                    "image": "assets/images/arts/img_7.jpg",
+                    "descri": "Ken et Ryu sont, sans le savoir, les derniers représentants du style de combat antique connu sous le nom « Ansatsuken » (poing assassin). Ils découvrent le passé mystérieux de leur maître, Gouken, et l'héritage tragique et sombre du style Ansatsuken. Leur destin peut-il être changé ? Ou l'histoire va-t-elle se répéter ?",
+                    "stars": 2
+                },
+                {
+                    "id": 8,
+                    "title": "Kill Zone 2 (2015)",
+                    "image": "assets/images/arts/img_8.jpg",
+                    "descri": "Kit (Wu Jing), un policier sous couverture infiltré au sein d'un des plus puissant syndicat du crime dont le chef n'est autre que l'inquiétant Mr Hung (Louis Koo) dit le “cerveau”, se retrouve incarcéré dans une prison thaïlandaise, suite à l'échec ...",
+                    "stars": 2
+                },
+                {
+                    "id": 9,
+                    "title": "L'Homme aux poings de fer 2 (2015)",
+                    "image": "assets/images/arts/img_9.jpg",
+                    "descri": "Chine - 19ème siècle. Thaddeux, blessé, est recueilli par un couple de mineurs chinois. Mais une fois guéri, un conflit opposant les villageois, guerriers et autres mercenaires éclate...",
+                    "stars": 3
+                },
+                {
+                    "id": 10,
+                    "title": "Ninja Turtles (2014)",
+                    "image": "assets/images/arts/img_10.jpg",
+                    "descri": "Tenez-vous prêts : quatre héros de légende vont bientôt faire parler d'eux à New York… Leonardo, le leader, Michelangelo, le beau gosse, Raphael, le rebelle et Donatello, le cerveau, vont tout faire pour défendre la ville de New York, prise entre les griffes de Shredder. Entre deux dégustations de pizzas (sans anchois, bien sûr) et un entraînement intense aux arts martiaux, prodigué par leur maître Splinter, ils vont accomplir leur destin, aidés par la courageuse reporter, April O'Neil.",
+                    "stars": 5
                 }
             ]
         },
@@ -127,8 +253,50 @@
                     "id": 4,
                     "title": "The Blazing World (2021)",
                     "image": "assets/images/horrors/img_4.jpg",
-                    "descri": "Depuis l'âge de six ans, Margaret est hantée par le souvenir d'avoir vu sa sœur se noyer lors d'une bagarre explosive entre ses parents. En tant que jeune femme, elle s’enfonce davantage dans sa vie intérieure tordue, se retrouvant finalement au bord du suicide. À travers un voyage épique dans les couloirs les plus enfumés et les plus effrayants de son imagination, elle tente d'exorciser les démons qui la poussent de plus en plus près du bord.",
+                    "descri": "Depuis l'âge de six ans, Margaret est hantée par le souvenir d'avoir vu sa sœur se noyer lors d'une bagarre explosive entre ses parents. En tant que jeune femme, elle s'enfonce davantage dans sa vie intérieure tordue, se retrouvant finalement au bord du suicide. À travers un voyage épique dans les couloirs les plus enfumés et les plus effrayants de son imagination, elle tente d'exorciser les démons qui la poussent de plus en plus près du bord.",
                     "stars": 2
+                },
+                {
+                    "id": 5,
+                    "title": "Saw X (2023)",
+                    "image": "assets/images/horrors/img_5.jpg",
+                    "descri": "Entre les évènements de Saw et Saw 2, on y retrouve un John Kramer malade et désespéré, qui se rend au Mexique afin de subir une opération expérimentale capable de guérir son cancer, mais il découvre que tout ceci n'est qu'une escroquerie visant des malades vulnérables et affligés. Animé d'un nouveau but, le célèbre tueur en série retourne à son œuvre, et va prendre sa revanche sur ces escrocs dans un terrible « jeu » dont il a le secret, à travers des pièges toujours plus machiavéliques et ingénieux les uns que les autres.",
+                    "stars": 4
+                },
+                {
+                    "id": 6,
+                    "title": "The Jester (2023)",
+                    "image": "assets/images/horrors/img_6.jpg",
+                    "descri": "Un être malveillant connu sous le nom de The Jester terrorise les habitants d'une petite ville la nuit d'Halloween, dont deux sœurs séparées qui doivent s'unir pour trouver un moyen de vaincre cette entité maléfique.",
+                    "stars": 4
+                },
+                {
+                    "id": 7,
+                    "title": "Consecration (2023)",
+                    "image": "assets/images/horrors/img_7.jpg",
+                    "descri": "Après la mort de son frère dans d'étranges circonstances, Grace se rend dans un couvent pour obtenir des réponses. Le meurtre, le sacrilège et un terrible secret sur son passé rythment son voyage.",
+                    "stars": 2
+                },
+                {
+                    "id": 8,
+                    "title": "Ivanna (2022)",
+                    "image": "assets/images/horrors/img_8.jpg",
+                    "descri": "Ambar et Dika viennent de commencer un nouveau chapitre de leur vie lorsque la rancune d'une entité malveillante vieille de plusieurs années se déroule sous leurs yeux. Avec un cadeau qu'elle a involontairement, Ambar est maintenant obligée de terminer la vengeance de l'entité, un esprit hollandais sans tête, Ivanna...",
+                    "stars": 2
+                },
+                {
+                    "id": 9,
+                    "title": "Excroissance (2023)",
+                    "image": "assets/images/horrors/img_9.jpg",
+                    "descri": "Une jeune créatrice de mode voit sa vie bouleversée lorsque ses pensées intérieures les plus sombres se manifestent sous la forme d'une chose qui ne cesse de croître.",
+                    "stars": 3
+                },
+                {
+                    "id": 10,
+                    "title": "La Nonne : La Malédiction de Sainte-Lucie (2023)",
+                    "image": "assets/images/horrors/img_10.jpg",
+                    "descri": "En France, en 1956, un prêtre est assassiné dans un internat. Après la mort du prêtre, il se passe des choses qui ne peuvent plus être expliquées rationnellement. Sœur Irène est une nouvelle fois confrontée à un pouvoir démoniaque. Elle se rend vite compte que c'est le démon Valak qui est de retour et qui se prépare à ses méfaits meurtriers.",
+                    "stars": 5
                 }
             ]
         }
